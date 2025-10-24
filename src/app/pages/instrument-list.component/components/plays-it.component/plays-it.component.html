@@ -1,0 +1,35 @@
+<div class="max-w-md w-80 mx-auto bg-white shadow-lg rounded-2xl overflow-hidden border border-gray-200">
+  <div class="bg-indigo-600 text-white text-center p-3">
+    <h2 class="text-lg font-semibold">Instrumentos que sé tocar</h2>
+  </div>
+
+  <ul class="divide-y divide-gray-200">
+    @for (inst of instrumentsKnown(); track inst.id) {
+      @if (inst.playsIt) {
+        <li class="flex items-center justify-between p-4 hover:bg-gray-50 transition">
+          <div class="flex items-center gap-3">
+            <img
+              [src]="inst.imageUrl"
+              [alt]="inst.name"
+              class="w-10 h-10 object-contain"
+            >
+            <span class="text-gray-800 font-medium">{{ inst.name }}</span>
+          </div>
+
+          <button
+            class="text-sm text-indigo-600 hover:text-indigo-800 font-medium"
+            (click)="changeInstrument(inst)"
+          >
+            Dejar de tocar
+          </button>
+        </li>
+      }
+    }
+  </ul>
+
+  @if (!instrumentsKnown().length) {
+    <div class="p-4 text-center text-gray-500">
+      Todavía no marcaste ningún instrumento 🎸
+    </div>
+  }
+</div>

@@ -1,0 +1,47 @@
+<div class="flex justify-between align-middle gap-20">
+    <div class="gallery border-2 rounded mx-auto bg-indigo-600 border-sky-950" style="width:750px;">
+        <div class="top flex p-2 border-b  border-sky-950 select-none">
+            <div class="heading text-gray-800 w-full pl-3 font-semibold my-auto ">
+                {{currentName()}}
+            </div>
+            <div class="buttons ml-auto flex  text-gray-600 mr-1">
+                <svg (click)="prev()" action="prev" class="w-7 border-2 rounded-l-lg p-1 cursor-pointer border-r-0  border-sky-950 text-sky-950"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path action="prev" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <svg (click)="next()" action="next" class="w-7 border-2 rounded-r-lg p-1 cursor-pointer  border-sky-950 text-sky-950"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path action="next" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </div>
+        </div>
+        <div class="content-area w-full h-96 overflow-hidden">
+            <div class="platform shadow-xl h-full flex">
+                @for (inst of instruments(); track inst.id) {
+                <div class="each-frame border-box flex-none h-full" [ngClass]="{ 'hidden': inst.id !== currentId() }">
+                    <div class="main flex w-full p-8">
+                        <div class="sub w-4/6 my-auto">
+                            <img class="w-full p-8" [src]="inst.imageUrl" alt="">
+                        </div>
+                        <div class="sub w-full my-auto">
+                            <div class="head text-3xl font-bold mb-4">{{inst.name}}</div>
+                            <div class="long-text text-lg">
+                                Tipo de instrumento: {{inst.type}}
+                            </div>
+
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 accent-violet-600 rounded" [checked]="inst.playsIt" (change)="changeInstrument(inst)">
+                                <span class="long-text text-lg">Sé tocarlo</span>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    <plays-it/>
+</div>
