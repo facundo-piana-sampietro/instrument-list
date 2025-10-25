@@ -5,14 +5,14 @@
       "name": "Guitarra",
       "type": "De cuerda",
       "imageUrl": "assets/img/guitar-icon.png",
-      "playsIt": true
+      "playsIt": false
     },
     {
       "id": "1",
       "name": "Bajo",
       "type": "De cuerda",
       "imageUrl": "assets/img/bass-icon.png",
-      "playsIt": true
+      "playsIt": false
     },
     {
       "id": "2",
