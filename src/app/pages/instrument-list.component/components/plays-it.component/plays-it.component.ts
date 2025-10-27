@@ -11,8 +11,6 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 export class PlaysItComponent {
   readonly store = inject(InstrumentStore);
 
-  instrumentsKnown = computed(() => this.store.instrumentsKnown());
-
   changeInstrument(instrument: Instrument) {
     const updatedInstrument: Instrument = {
       ...instrument,

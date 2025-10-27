@@ -4,7 +4,7 @@
   </div>
 
   <ul class="divide-y divide-gray-200">
-    @for (inst of instrumentsKnown(); track inst.id) {
+    @for (inst of this.store.instrumentsKnown(); track inst.id) {
       @if (inst.playsIt) {
         <li class="flex items-center justify-between p-4 hover:bg-gray-50 transition">
           <div class="flex items-center gap-3">
@@ -27,7 +27,7 @@
     }
   </ul>
 
-  @if (!instrumentsKnown().length) {
+  @if (!this.store.instrumentsKnown().length) {
     <div class="p-4 text-center text-gray-500">
       Todavía no marcaste ningún instrumento 🎸
     </div>

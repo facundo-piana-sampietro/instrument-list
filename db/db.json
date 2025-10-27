@@ -5,35 +5,35 @@
       "name": "Guitarra",
       "type": "De cuerda",
       "imageUrl": "assets/img/guitar-icon.png",
-      "playsIt": false
+      "playsIt": true
     },
     {
       "id": "1",
       "name": "Bajo",
       "type": "De cuerda",
       "imageUrl": "assets/img/bass-icon.png",
-      "playsIt": false
+      "playsIt": true
     },
     {
       "id": "2",
       "name": "Batería",
       "type": "De percusión",
       "imageUrl": "assets/img/drums-icon.png",
-      "playsIt": false
+      "playsIt": true
     },
     {
       "id": "3",
       "name": "Piano",
       "type": "De cuerda percutida",
       "imageUrl": "assets/img/piano-icon.png",
-      "playsIt": false
+      "playsIt": true
     },
     {
       "id": "4",
       "name": "Saxo",
       "type": "De viento-madera",
       "imageUrl": "assets/img/saxo-icon.png",
-      "playsIt": false
+      "playsIt": true
     }
   ]
 }
